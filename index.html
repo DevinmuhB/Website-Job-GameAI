@@ -95,43 +95,7 @@
 
     <input type="file" id="fileInput" accept=".pdf,.doc,.docx,.txt" onchange="handleFileSelect(event)">
     <input type="file" id="imageInput" accept="image/*,video/*" onchange="handleFileSelect(event)">
-    <script>
-        async function cariLowongan() {
-          const res = await fetch("http://localhost:5000/api/jobs?query=frontend&location=jakarta");
-          const data = await res.json();
-          console.log("Lowongan:", data);
-        
-          // tampilkan di chat box
-          let output = data.map(job => `
-            <div class="job-card">
-              <h3>${job.title}</h3>
-              <p><b>Perusahaan:</b> ${job.company}</p>
-              <p><b>Lokasi:</b> ${job.location}</p>
-              <p><b>Gaji:</b> ${job.salary}</p>
-              <a href="${job.url}" target="_blank">Lihat Detail</a>
-            </div>
-          `).join("");
-          document.getElementById("chatBox").innerHTML = output;
-        }
-        
-        async function cariGame() {
-          const res = await fetch("http://localhost:5000/api/games?query=gta");
-          const data = await res.json();
-          console.log("Game:", data);
-        
-          let output = data.map(game => `
-            <div class="game-card">
-              <img src="${game.image}" width="200">
-              <h3>${game.name}</h3>
-              <p><b>Rilis:</b> ${game.released}</p>
-              <p><b>Rating:</b> ${game.rating}</p>
-              <p><b>Platform:</b> ${game.platforms}</p>
-            </div>
-          `).join("");
-          document.getElementById("chatBox").innerHTML = output;
-        }
-        </script>
-        
+    
     <script src="assets/js/script.js"></script>
     <!-- PDF.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
@@ -140,4 +104,5 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.4.2/mammoth.browser.min.js"></script>
 
 </body>
+
 </html>

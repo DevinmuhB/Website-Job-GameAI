@@ -1,2 +1,2 @@
-# Website-Personal-Finance-Tracker
-Website Personal Finance Tracker
+# Website-Job&GameAI
+Website tentang informasi lowongan kerja dan informasi game AI
